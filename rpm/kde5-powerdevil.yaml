@@ -1,0 +1,92 @@
+Name         : kde5-powerdevil
+Version      : 4.97.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : Manages the power consumption settings of a Plasma Shell
+Description  : |
+  Manages the power consumption settings of a Plasma Shell.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kde5-rpm-macros
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    # n.a.
+    #- xcb-util-keysyms-devel
+    #- xcb-util-image-devel
+    #- xcb-util-wm-devel
+    - kf5-umbrella
+    - kf5-kauth-devel
+    - kf5-kidletime-devel
+    - kf5-kconfig-devel
+    - kf5-solid-devel
+    - kf5-ki18n-devel
+    - kf5-kglobalaccel-devel
+    - kf5-kio-devel
+    - kf5-kwindowsystem-devel
+    - kf5-plasma-devel
+    - kf5-knotifyconfig-devel
+    - kf5-kdelibs4support-devel
+    - kde5-plasma-workspace-devel
+    - chrpath
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5PrintSupport
+    - Qt5X11Extras
+    - systemd
+    - upower-glib
+    - xcb
+    - xrandr
+Requires:
+    - kde5-filesystem
+
+Conflicts:
+    - kde-runtime
+    - powerdevil
+Provides:
+    - powerdevil = %{version}-%{release}
+
+Files:
+    - "%doc COPYING"
+    - "%{_kde5_sysconfdir}/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf"
+    - "%{_kde5_libdir}/libpowerdevilconfigcommonprivate.so.*"
+    - "%{_kde5_libdir}/libpowerdevilcore.so.*"
+    - "%{_kde5_libdir}/libpowerdevilui.so.*"
+    - "%{_kf5_libexecdir}/kauth/backlighthelper"
+    - "%{_datadir}/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service"
+    - "%{_datadir}/knotifications5/powerdevil.notifyrc"
+    - "%{_datadir}/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy"
+    - "%{_datadir}/kservices5/kded/*.desktop"
+
+SubPackages:
+    - Name: kcm
+      Group: System/Base
+      Summary: Power management configuration module for Plasma
+      Description: |
+        Power management configuration module for Plasma.
+      Files:
+          - "%{_kde5_plugindir}/*.so"
+          - "%{_datadir}/kservices5/*.desktop"
+          - "%{_datadir}/kservicetypes5/*.desktop"
