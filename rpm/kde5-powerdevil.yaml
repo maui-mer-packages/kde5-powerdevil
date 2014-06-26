@@ -93,3 +93,11 @@ SubPackages:
           - "%{_kde5_plugindir}/*.so"
           - "%{_datadir}/kservices5/*.desktop"
           - "%{_datadir}/kservicetypes5/*.desktop"
+    - Name: doc
+      Group: Documentation
+      BuildArch: noarch
+      Summary: Documentation and user manuals for %{name}
+      Description: |
+        Documentation and user manuals for %{name}
+      Files:
+          - "%{_datadir}/doc/HTML/en/*"

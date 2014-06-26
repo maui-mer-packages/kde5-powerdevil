@@ -68,6 +68,16 @@ Requires:   %{name} = %{version}-%{release}
 Power management configuration module for Plasma.
 
 
+%package doc
+Summary:    Documentation and user manuals for %{name}
+Group:      Documentation
+BuildArch:  noarch
+Requires:   %{name} = %{version}-%{release}
+
+%description doc
+Documentation and user manuals for %{name}
+
+
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
@@ -119,3 +129,9 @@ rm -f %{buildroot}/%{_kde5_libdir}/libpowerdevil{configcommonprivate,core,ui}.so
 %{_datadir}/kservicetypes5/*.desktop
 # >> files kcm
 # << files kcm
+
+%files doc
+%defattr(-,root,root,-)
+%{_datadir}/doc/HTML/en/*
+# >> files doc
+# << files doc
