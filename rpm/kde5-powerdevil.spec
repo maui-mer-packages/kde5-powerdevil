@@ -104,7 +104,7 @@ rm -f %{buildroot}/%{_kde5_libdir}/libpowerdevil{configcommonprivate,core,ui}.so
 %{_kde5_libdir}/libpowerdevilconfigcommonprivate.so.*
 %{_kde5_libdir}/libpowerdevilcore.so.*
 %{_kde5_libdir}/libpowerdevilui.so.*
-%{_kf5_libexecdir}/kauth/backlighthelper
+%{_kde5_libexecdir}/kauth/backlighthelper
 %{_datadir}/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service
 %{_datadir}/knotifications5/powerdevil.notifyrc
 %{_datadir}/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
