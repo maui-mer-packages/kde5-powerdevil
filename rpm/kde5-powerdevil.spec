@@ -17,6 +17,7 @@ URL:        http://www.kde.org
 Source0:    %{name}-%{version}.tar.xz
 Source100:  kde5-powerdevil.yaml
 Source101:  kde5-powerdevil-rpmlintrc
+Patch0:     remove-useless-xcb-modules.patch
 Requires:   kde5-filesystem
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
@@ -70,6 +71,8 @@ Power management configuration module for Plasma.
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# remove-useless-xcb-modules.patch
+%patch0 -p1
 # >> setup
 # << setup
 

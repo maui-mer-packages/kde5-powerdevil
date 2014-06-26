@@ -12,6 +12,9 @@ SetupOptions : -q -n %{name}-%{version}/upstream
 Sources:
     - "%{name}-%{version}.tar.xz"
 
+Patches:
+    - remove-useless-xcb-modules.patch
+
 RpmLintIgnore:
     - devel-file-in-non-devel-package
     - no-changelogname-tag
