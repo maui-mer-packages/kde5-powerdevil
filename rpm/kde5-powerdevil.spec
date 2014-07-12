@@ -9,7 +9,7 @@ Name:       kde5-powerdevil
 # << macros
 
 Summary:    Manages the power consumption settings of a Plasma Shell
-Version:    4.97.0
+Version:    4.98.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
