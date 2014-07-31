@@ -12,9 +12,6 @@ SetupOptions : -q -n %{name}-%{version}/upstream
 Sources:
     - "%{name}-%{version}.tar.xz"
 
-Patches:
-    - remove-useless-xcb-modules.patch
-
 RpmLintIgnore:
     - devel-file-in-non-devel-package
     - no-changelogname-tag
@@ -29,10 +26,9 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
-    # n.a.
-    #- xcb-util-keysyms-devel
-    #- xcb-util-image-devel
-    #- xcb-util-wm-devel
+    - xcb-util-keysyms-devel
+    - xcb-util-image-devel
+    - xcb-util-wm-devel
     - kf5-umbrella
     - kf5-kauth-devel
     - kf5-kidletime-devel

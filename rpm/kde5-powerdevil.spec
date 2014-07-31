@@ -17,7 +17,6 @@ URL:        http://www.kde.org
 Source0:    %{name}-%{version}.tar.xz
 Source100:  kde5-powerdevil.yaml
 Source101:  kde5-powerdevil-rpmlintrc
-Patch0:     remove-useless-xcb-modules.patch
 Requires:   kde5-filesystem
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
@@ -37,6 +36,9 @@ BuildRequires:  kde5-rpm-macros
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
+BuildRequires:  xcb-util-keysyms-devel
+BuildRequires:  xcb-util-image-devel
+BuildRequires:  xcb-util-wm-devel
 BuildRequires:  kf5-umbrella
 BuildRequires:  kf5-kauth-devel
 BuildRequires:  kf5-kidletime-devel
@@ -81,8 +83,6 @@ Documentation and user manuals for %{name}
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# remove-useless-xcb-modules.patch
-%patch0 -p1
 # >> setup
 # << setup
 
