@@ -1,5 +1,5 @@
-Name         : kde5-powerdevil
-Version      : 4.98.0
+Name         : powerdevil
+Version      : 5.0.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -22,26 +22,24 @@ Configure    : none
 Builder      : none
 
 PkgBR:
-    - kde5-rpm-macros
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
     - xcb-util-keysyms-devel
     - xcb-util-image-devel
     - xcb-util-wm-devel
-    - kf5-umbrella
-    - kf5-kauth-devel
-    - kf5-kidletime-devel
-    - kf5-kconfig-devel
-    - kf5-solid-devel
-    - kf5-ki18n-devel
-    - kf5-kglobalaccel-devel
-    - kf5-kio-devel
-    - kf5-kwindowsystem-devel
-    - kf5-plasma-devel
-    - kf5-knotifyconfig-devel
-    - kf5-kdelibs4support-devel
-    - kde5-plasma-workspace-devel
+    - kauth-devel
+    - kidletime-devel
+    - kconfig-devel
+    - solid-devel
+    - ki18n-devel
+    - kglobalaccel-devel
+    - kio-devel
+    - kwindowsystem-devel
+    - plasma-devel
+    - knotifyconfig-devel
+    - kdelibs4support-devel
+    - plasma-workspace-devel
     - chrpath
 PkgConfigBR:
     - Qt5Core
@@ -59,25 +57,19 @@ PkgConfigBR:
     - xcb
     - xrandr
 Requires:
-    - kde5-filesystem
-
-Conflicts:
-    - kde-runtime
-    - powerdevil
-Provides:
-    - powerdevil = %{version}-%{release}
+    - kf5-filesystem
 
 Files:
     - "%doc COPYING"
-    - "%{_kde5_sysconfdir}/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf"
-    - "%{_kde5_libdir}/libpowerdevilconfigcommonprivate.so.*"
-    - "%{_kde5_libdir}/libpowerdevilcore.so.*"
-    - "%{_kde5_libdir}/libpowerdevilui.so.*"
-    - "%{_kde5_libexecdir}/kauth/backlighthelper"
+    - "%{_kf5_sysconfdir}/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf"
+    - "%{_kf5_libdir}/libpowerdevilconfigcommonprivate.so.*"
+    - "%{_kf5_libdir}/libpowerdevilcore.so.*"
+    - "%{_kf5_libdir}/libpowerdevilui.so.*"
+    - "%{_kf5_libdir}/libexec/kauth/backlighthelper"
     - "%{_datadir}/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service"
     - "%{_datadir}/knotifications5/powerdevil.notifyrc"
     - "%{_datadir}/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy"
-    - "%{_datadir}/kservices5/kded/*.desktop"
+    - "%{_kf5_servicesdir}/kded/*.desktop"
 
 SubPackages:
     - Name: kcm
@@ -86,9 +78,9 @@ SubPackages:
       Description: |
         Power management configuration module for Plasma.
       Files:
-          - "%{_kde5_plugindir}/*.so"
-          - "%{_datadir}/kservices5/*.desktop"
-          - "%{_datadir}/kservicetypes5/*.desktop"
+          - "%{_kf5_plugindir}/*"
+          - "%{_kf5_servicesdir}/*.desktop"
+          - "%{_kf5_servicetypesdir}/*.desktop"
     - Name: doc
       Group: Documentation
       BuildArch: noarch
@@ -96,4 +88,4 @@ SubPackages:
       Description: |
         Documentation and user manuals for %{name}
       Files:
-          - "%{_datadir}/doc/HTML/en/*"
+          - "%{_kf5_htmldir}/en/*"
