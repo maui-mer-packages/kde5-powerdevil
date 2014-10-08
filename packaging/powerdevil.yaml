@@ -7,7 +7,6 @@ Summary      : Manages the power consumption settings of a Plasma Shell
 Description  : |
   Manages the power consumption settings of a Plasma Shell.
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
