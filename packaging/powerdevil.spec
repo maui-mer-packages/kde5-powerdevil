@@ -9,7 +9,7 @@ Name:       powerdevil
 # << macros
 
 Summary:    Manages the power consumption settings of a Plasma Shell
-Version:    5.0.0
+Version:    5.1.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
